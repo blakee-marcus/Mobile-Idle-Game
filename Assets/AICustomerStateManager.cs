@@ -6,6 +6,9 @@ using UnityEngine.AI;
 public class AICustomerStateManager : MonoBehaviour
 {
   [SerializeField] private Transform ticketBoothPositionTransform;
+  [SerializeField] private Transform foodStandPositionTransform;
+  [SerializeField] private Transform movieTheaterPositionTransform;
+  [SerializeField] private Transform exitPositionTransform;
   private NavMeshAgent navMeshAgent;
   public enum CustomerState {
     purchaseTicket,
@@ -39,19 +42,20 @@ public class AICustomerStateManager : MonoBehaviour
                 
                 break;
             case CustomerState.purchaseFood:
-                Debug.Log("Customer is purchasing food");
+                navMeshAgent.SetDestination(foodStandPositionTransform.transform.position);
                 break;
             case CustomerState.watchMovie:
-                Debug.Log("Customer is watching a movie");
+                navMeshAgent.SetDestination(movieTheaterPositionTransform.transform.position);
                 break;
             case CustomerState.leaveTheater:
-                Debug.Log("Customer is leaving the theater");
+                navMeshAgent.SetDestination(exitPositionTransform.transform.position);
                 break;
         }
     }
 
     public void SetCustomerState(CustomerState newState)
     {
+        Debug.Log("Customer state changed from " + currentCustomerState + " to " + newState);
         currentCustomerState = newState;
     }
 }

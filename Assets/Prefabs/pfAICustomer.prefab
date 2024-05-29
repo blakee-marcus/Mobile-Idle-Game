@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2800261292696646732}
-  - component: {fileID: 2800261292696646730}
   - component: {fileID: 2800261292696646731}
   m_Layer: 0
   m_Name: pfAICustomer
@@ -34,19 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2800261292696646730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2800261292696646733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b735b9eaa677b1d45a79c85bd0f2f862, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ticketBoothPositionTransform: {fileID: 0}
 --- !u!195 &2800261292696646731
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -81,12 +67,14 @@ GameObject:
   - component: {fileID: 2800261292837098258}
   - component: {fileID: 2800261292837098259}
   - component: {fileID: 2800261292837098260}
+  - component: {fileID: 1750012150}
+  - component: {fileID: 1750012151}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2800261292837098261
 Transform:
@@ -96,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2800261292837098262}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 100.86, y: 62.87, z: -3.3099995}
+  m_LocalPosition: {x: -0.026, y: 0.931, z: -0.017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -167,3 +155,41 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &1750012150
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2800261292837098262}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1750012151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2800261292837098262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b735b9eaa677b1d45a79c85bd0f2f862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ticketBoothPositionTransform: {fileID: 0}
+  foodStandPositionTransform: {fileID: 0}
+  movieTheaterPositionTransform: {fileID: 0}
+  exitPositionTransform: {fileID: 0}

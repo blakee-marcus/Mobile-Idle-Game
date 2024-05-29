@@ -7,7 +7,6 @@ public class HandleTicketStand : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         AICustomerStateManager customer = collider.GetComponent<AICustomerStateManager>();
-        Debug.Log(customer);
         if (customer != null && customer.CurrentCustomerState == AICustomerStateManager.CustomerState.purchaseTicket)
         {
             HandleTicketPurchase(customer);

@@ -15,6 +15,7 @@ public class HandleTicketStand : MonoBehaviour
 
     private void HandleTicketPurchase(AICustomerStateManager customer)
     {
+        ProgressBarPopUp.Create(customer.transform.position, 5);
         Debug.Log("Customer has reached the ticket stand and is purchasing a ticket.");
 
         // Change customer state after purchasing the ticket

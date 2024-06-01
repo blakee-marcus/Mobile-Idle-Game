@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class HandleMovieTheater : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider collider)
+  private void OnTriggerEnter(Collider collider)
+  {
+    AICustomerStateManager customer = collider.GetComponent<AICustomerStateManager>();
+    if (customer != null && customer.CurrentCustomerState == AICustomerStateManager.CustomerState.watchMovie)
     {
-        AICustomerStateManager customer = collider.GetComponent<AICustomerStateManager>();
-        if (customer != null && customer.CurrentCustomerState == AICustomerStateManager.CustomerState.watchMovie)
-        {
-            HandleMovieViewing(customer);
-        }
+      HandleMovieViewing(customer);
     }
+  }
 
-    private void HandleMovieViewing(AICustomerStateManager customer)
-    {
-        Debug.Log("Customer has reached the ticket stand and is purchasing a ticket.");
+  private void HandleMovieViewing(AICustomerStateManager customer)
+  {
+    Debug.Log("Customer has reached the ticket stand and is purchasing a ticket.");
 
-        // Change customer state after purchasing the ticket
-        customer.SetCustomerState(AICustomerStateManager.CustomerState.leaveTheater);
-    }
+    // Change customer state after purchasing the ticket
+    customer.SetCustomerState(AICustomerStateManager.CustomerState.leaveTheater);
+  }
 }

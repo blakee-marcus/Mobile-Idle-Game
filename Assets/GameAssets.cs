@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class GameAssets : MonoBehaviour
 {
-    private static GameAssets _i;
+  private static GameAssets _i;
 
-    public static GameAssets i
+  public static GameAssets i
+  {
+    get
     {
-        get
-        {
-            if (_i == null) _i = Instantiate(Resources.Load<GameAssets>("GameAssets"));
-            return _i;
-        }
+      if (_i == null) _i = Instantiate(Resources.Load<GameAssets>("GameAssets"));
+      return _i;
     }
+  }
 
-    public Transform progressBarPopUp;
+  public Transform progressBarPopUp;
 
-    public void Awake()
-    {
-        _i = this;
-    }
+  public void Awake()
+  {
+    _i = this;
+  }
 }

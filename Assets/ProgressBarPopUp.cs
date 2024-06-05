@@ -11,7 +11,7 @@ public class ProgressBarPopUp : MonoBehaviour
   private float maxTime;
 
   // Static method to create a ProgressBarPopUp at a specific position
-  public static ProgressBarPopUp Create(Vector3 position, int maxTime)
+  public static ProgressBarPopUp Create(Vector3 position, float maxTime)
   {
     if (GameAssets.i == null)
     {

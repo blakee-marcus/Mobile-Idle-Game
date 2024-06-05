@@ -15,8 +15,9 @@ public class HandleFoodStand : MonoBehaviour
 
   private void HandleFoodPurchase(AICustomerStateManager customer)
   {
-    Debug.Log("Customer has reached the food stand and is purchasing food.");
-
-    customer.SetCustomerState(AICustomerStateManager.CustomerState.watchMovie);
+    Vector3 foodStandPosition = GameAssets.i.foodStand.transform.position;
+    foodStandPosition.y += 3;
+    ProgressBarPopUp.Create(foodStandPosition, GameAssets.i.playerStats.foodStandTimeToServe);
+    CustomerTaskHandler.Instance.StartCustomerTask(customer, GameAssets.i.playerStats.foodStandTimeToServe, AICustomerStateManager.CustomerState.watchMovie);
   }
 }

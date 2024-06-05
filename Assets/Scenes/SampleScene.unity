@@ -165,6 +165,8 @@ GameObject:
   m_Component:
   - component: {fileID: 316429174}
   - component: {fileID: 316429175}
+  - component: {fileID: 316429176}
+  - component: {fileID: 316429177}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -202,6 +204,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBarPopUp: {fileID: 8190351588268505942, guid: a1c0b05baebc7924c9db99ff4c4953e2,
     type: 3}
+  ticketStand: {fileID: 1856376946}
+  foodStand: {fileID: 2668513758936550211}
+  playerStats: {fileID: 316429176}
+--- !u!114 &316429176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316429173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72306da3075fe654c924f1a990423176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMoney: 0
+  ticketPrice: 3
+  ticketStandTimeToServe: 6
+  baseFoodPrice: 1
+  foodStandTimeToServe: 0
+--- !u!114 &316429177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316429173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a48fa3db6dbf74ab87455305c3a675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &654578852
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +442,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.15465704, y: -0, z: -0, w: 0.98796827}
+  m_LocalRotation: {x: 0.15465865, y: 0, z: 0, w: 0.98796797}
   m_LocalPosition: {x: 0, y: 17, z: -8.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

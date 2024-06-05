@@ -16,6 +16,10 @@ public class GameAssets : MonoBehaviour
   }
 
   public Transform progressBarPopUp;
+  public Transform ticketStand;
+  public Transform foodStand;
+  public PlayerStats playerStats;
+  
 
   public void Awake()
   {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HandleTicketStand : MonoBehaviour
@@ -15,10 +13,10 @@ public class HandleTicketStand : MonoBehaviour
 
   private void HandleTicketPurchase(AICustomerStateManager customer)
   {
-    ProgressBarPopUp.Create(customer.transform.position, 15);
-    Debug.Log("Customer has reached the ticket stand and is purchasing a ticket.");
+    Vector3 ticketStandPosition = GameAssets.i.ticketStand.transform.position;
+    ticketStandPosition.y += 3;
+    ProgressBarPopUp.Create(ticketStandPosition, GameAssets.i.playerStats.ticketStandTimeToServe);
 
-    // Change customer state after purchasing the ticket
-    customer.SetCustomerState(AICustomerStateManager.CustomerState.purchaseFood);
+    CustomerTaskHandler.Instance.StartCustomerTask(customer, GameAssets.i.playerStats.ticketStandTimeToServe, AICustomerStateManager.CustomerState.purchaseFood);
   }
 }

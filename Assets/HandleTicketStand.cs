@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class HandleTicketStand : MonoBehaviour
@@ -18,5 +19,13 @@ public class HandleTicketStand : MonoBehaviour
     ProgressBarPopUp.Create(ticketStandPosition, GameAssets.i.playerStats.ticketStandTimeToServe);
 
     CustomerTaskHandler.Instance.StartCustomerTask(customer, GameAssets.i.playerStats.ticketStandTimeToServe, AICustomerStateManager.CustomerState.purchaseFood);
+
+    StartCoroutine(WaitAndAddMoney(GameAssets.i.playerStats.ticketStandTimeToServe));
+  }
+
+  private IEnumerator WaitAndAddMoney(float waitTime)
+  {
+    yield return new WaitForSeconds(waitTime);
+    GameAssets.i.playerStats.AddMoney(GameAssets.i.playerStats.ticketPrice);
   }
 }

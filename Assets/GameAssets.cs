@@ -18,7 +18,10 @@ public class GameAssets : MonoBehaviour
   public Transform progressBarPopUp;
   public Transform ticketStand;
   public Transform foodStand;
+  public Transform movieTheater;
   public PlayerStats playerStats;
+  public Canvas worldSpaceCanvas;
+  public TMPro.TextMeshProUGUI currentCashText;
   
 
   public void Awake()

@@ -19,5 +19,12 @@ public class HandleFoodStand : MonoBehaviour
     foodStandPosition.y += 3;
     ProgressBarPopUp.Create(foodStandPosition, GameAssets.i.playerStats.foodStandTimeToServe);
     CustomerTaskHandler.Instance.StartCustomerTask(customer, GameAssets.i.playerStats.foodStandTimeToServe, AICustomerStateManager.CustomerState.watchMovie);
+    StartCoroutine(WaitAndAddMoney(GameAssets.i.playerStats.foodStandTimeToServe));
+  }
+
+  private IEnumerator WaitAndAddMoney(float waitTime)
+  {
+    yield return new WaitForSeconds(waitTime);
+    GameAssets.i.playerStats.AddMoney(GameAssets.i.playerStats.foodPrice);
   }
 }

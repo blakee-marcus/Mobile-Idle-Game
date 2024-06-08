@@ -25,7 +25,7 @@ public class ProgressBarPopUp : MonoBehaviour
       return null;
     }
     
-    Canvas parentCanvas = FindObjectOfType<Canvas>();
+    Canvas parentCanvas = GameAssets.i.worldSpaceCanvas;
     
     // Instantiate the progress bar prefab from GameAssets
     Transform progressBarPopUpTransform = Instantiate(GameAssets.i.progressBarPopUp, position, Quaternion.identity, parentCanvas.transform);

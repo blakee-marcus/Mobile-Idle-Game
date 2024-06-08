@@ -15,9 +15,10 @@ public class HandleMovieTheater : MonoBehaviour
 
   private void HandleMovieViewing(AICustomerStateManager customer)
   {
-    Debug.Log("Customer has reached the ticket stand and is purchasing a ticket.");
+    Vector3 movieTheaterPosition = GameAssets.i.movieTheater.transform.position;
+    movieTheaterPosition.y += 3;
+    ProgressBarPopUp.Create(movieTheaterPosition, GameAssets.i.playerStats.movieTheaterTimeToServe);
 
-    // Change customer state after purchasing the ticket
-    customer.SetCustomerState(AICustomerStateManager.CustomerState.leaveTheater);
+    CustomerTaskHandler.Instance.StartCustomerTask(customer, GameAssets.i.playerStats.movieTheaterTimeToServe, AICustomerStateManager.CustomerState.leaveTheater);
   }
 }

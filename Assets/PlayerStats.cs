@@ -6,10 +6,11 @@ public class PlayerStats : MonoBehaviour
 {
   public float currentMoney;
   public float ticketPrice;
-  public float ticketStandTimeToServe;
   public float foodPrice;
+  public float ticketStandTimeToServe;
   public float foodStandTimeToServe;
   public float movieTheaterTimeToServe;
+  public float timeBetweenCustomerSpawn;
 
   public void Start()
   {
@@ -19,6 +20,7 @@ public class PlayerStats : MonoBehaviour
     foodPrice = 5;
     foodStandTimeToServe = 10;
     movieTheaterTimeToServe = 10;
+    timeBetweenCustomerSpawn = 10;
   }
 
   public void AddMoney(float amount)

@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class HandleCustomerSpawning : MonoBehaviour
 {
-  private float timeSinceLastSpawn = 0.0f;
-
-  void Update()
+  void Start()
   {
-    timeSinceLastSpawn += Time.deltaTime;
-    if (timeSinceLastSpawn >= 5.0f)
-    {
-      StartCoroutine(SpawnCustomer());
-      timeSinceLastSpawn = 0.0f;
-    }
+    StartCoroutine(SpawnCustomer());
   }
 
   IEnumerator SpawnCustomer()
   {
-    // Instantiate a new customer at spawn point
-    timeSinceLastSpawn = 0.0f;
-    yield return null;
+    while (true)
+    {
+      Instantiate(GameAssets.i.customerPrefab, GameAssets.i.customerSpawnPoint.position, GameAssets.i.customerSpawnPoint.rotation);
+      yield return new WaitForSeconds(GameAssets.i.playerStats.timeBetweenCustomerSpawn); // Wait for 5 seconds before spawning the next customer
+    }
   }
-  
 }

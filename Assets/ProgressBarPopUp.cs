@@ -24,12 +24,12 @@ public class ProgressBarPopUp : MonoBehaviour
       Debug.LogError("ProgressBarPopUp prefab is not assigned in GameAssets");
       return null;
     }
-    
+
     Canvas parentCanvas = GameAssets.i.worldSpaceCanvas;
-    
+
     // Instantiate the progress bar prefab from GameAssets
     Transform progressBarPopUpTransform = Instantiate(GameAssets.i.progressBarPopUp, position, Quaternion.identity, parentCanvas.transform);
-    
+
     if (parentCanvas == null || parentCanvas.renderMode != RenderMode.WorldSpace)
     {
       Debug.LogError("No Canvas with World Space render mode found");

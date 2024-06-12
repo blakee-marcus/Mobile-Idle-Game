@@ -19,10 +19,13 @@ public class GameAssets : MonoBehaviour
   public Transform ticketStand;
   public Transform foodStand;
   public Transform movieTheater;
+  public Transform exit;
+  public Transform customerSpawnPoint;
+  public GameObject customerPrefab;
   public PlayerStats playerStats;
   public Canvas worldSpaceCanvas;
   public TMPro.TextMeshProUGUI currentCashText;
-  
+
 
   public void Awake()
   {

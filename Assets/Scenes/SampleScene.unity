@@ -189,7 +189,7 @@ Transform:
   m_Children:
   - {fileID: 122422016}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &316429175
 MonoBehaviour:
@@ -208,6 +208,10 @@ MonoBehaviour:
   ticketStand: {fileID: 1856376946}
   foodStand: {fileID: 2668513758936550211}
   movieTheater: {fileID: 1679158206}
+  exit: {fileID: 1467998246}
+  customerSpawnPoint: {fileID: 2053636964}
+  customerPrefab: {fileID: 2800261292696646733, guid: 87f0fc33db0cb3f499c819998f1d8087,
+    type: 3}
   playerStats: {fileID: 316429176}
   worldSpaceCanvas: {fileID: 1570447470}
   currentCashText: {fileID: 822480639}
@@ -223,12 +227,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72306da3075fe654c924f1a990423176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 0
+  currentMoney: 100
   ticketPrice: 3
+  foodPrice: 6
   ticketStandTimeToServe: 6
-  foodPrice: 0
-  foodStandTimeToServe: 0
-  movieTheaterTimeToServe: 0
+  foodStandTimeToServe: 6
+  movieTheaterTimeToServe: 6
+  timeBetweenCustomerSpawn: 6
 --- !u!114 &316429177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +665,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.13697046, g: 0.22311717, b: 0.3584906, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -774,7 +779,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1467998246 stripped
 Transform:
@@ -1269,91 +1274,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2668513758936550210}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2800261293504447463
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1750012151, guid: 87f0fc33db0cb3f499c819998f1d8087, type: 3}
-      propertyPath: exitPositionTransform
-      value: 
-      objectReference: {fileID: 1467998246}
-    - target: {fileID: 1750012151, guid: 87f0fc33db0cb3f499c819998f1d8087, type: 3}
-      propertyPath: foodStandPositionTransform
-      value: 
-      objectReference: {fileID: 2668513758936550211}
-    - target: {fileID: 1750012151, guid: 87f0fc33db0cb3f499c819998f1d8087, type: 3}
-      propertyPath: ticketBoothPositionTransform
-      value: 
-      objectReference: {fileID: 1856376946}
-    - target: {fileID: 1750012151, guid: 87f0fc33db0cb3f499c819998f1d8087, type: 3}
-      propertyPath: movieTheaterPositionTransform
-      value: 
-      objectReference: {fileID: 1679158206}
-    - target: {fileID: 2800261292696646732, guid: 87f0fc33db0cb3f499c819998f1d8087,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2800261292696646732, guid: 87f0fc33db0cb3f499c819998f1d8087,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 2800261292696646732, guid: 87f0fc33db0cb3f499c819998f1d8087,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 2800261292696646732, guid: 87f0fc33db0cb3f499c819998f1d8087,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 24.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 2800261292696646732, guid: 87f0fc33db0cb3f499c819998f1d8087,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2800261292696646732, guid: 87f0fc33db0cb3f499c819998f1d8087,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2800261292696646732, guid: 87f0fc33db0cb3f499c819998f1d8087,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2800261292696646732, guid: 87f0fc33db0cb3f499c819998f1d8087,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2800261292696646732, guid: 87f0fc33db0cb3f499c819998f1d8087,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2800261292696646732, guid: 87f0fc33db0cb3f499c819998f1d8087,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2800261292696646732, guid: 87f0fc33db0cb3f499c819998f1d8087,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2800261292696646733, guid: 87f0fc33db0cb3f499c819998f1d8087,
-        type: 3}
-      propertyPath: m_Name
-      value: pfAICustomer
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 87f0fc33db0cb3f499c819998f1d8087, type: 3}
 --- !u!1001 &3548752462385521633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1434,11 +1354,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pfCustomerSpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746111929577765137, guid: b11e8ea2243096840b15ee59f19fc093,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4746111929577765142, guid: b11e8ea2243096840b15ee59f19fc093,
         type: 3}

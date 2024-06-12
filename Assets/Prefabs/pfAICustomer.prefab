@@ -189,7 +189,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b735b9eaa677b1d45a79c85bd0f2f862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ticketBoothPositionTransform: {fileID: 0}
-  foodStandPositionTransform: {fileID: 0}
-  movieTheaterPositionTransform: {fileID: 0}
-  exitPositionTransform: {fileID: 0}

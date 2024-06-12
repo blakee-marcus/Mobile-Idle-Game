@@ -20,6 +20,7 @@ public class CustomerTaskHandler : MonoBehaviour
 
   public void StartCustomerTask(AICustomerStateManager customer, float timeToComplete, AICustomerStateManager.CustomerState nextState)
   {
+    Debug.Log("Starting customer task: " + nextState);
     StartCoroutine(CompleteCustomerTask(customer, timeToComplete, nextState));
   }
 
